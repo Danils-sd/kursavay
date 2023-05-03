@@ -1,7 +1,3 @@
-//
-// Created by Danila on 28.03.2023.
-//
-
 #ifndef BASEPROT_USER_H
 #define BASEPROT_USER_H
 #include "FIO.h"
@@ -18,16 +14,16 @@ private:
     FIO fio;
     string tNumber;
     Adres adres;
-    int kard;
+    string kard;
 public:
-    void base(int a, FIO b, string c, Adres d, int e);
+    void base(int a, FIO b, string c, Adres d, string e);
     void update(vector<User>& d, User a);
-    void del(vector<User>& d, int a);
+
     int getKod();
     FIO getFio();
     string getNumber();
     Adres getAdres();
-    int getKard();
+    string getKard();
 };
 
 

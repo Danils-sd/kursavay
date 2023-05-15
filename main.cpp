@@ -80,18 +80,25 @@ void VivodUser(int i){
 void Poisk(vector<User>& d, int a){
 
     string otv;
+    int chek = 0;
     switch (a) {
         case 0:
 
             cout << "Введите код: ";
             cin >> otv;
+
             for(int i = 0; i < d.size(); i++){
                 if(otv == to_string(d.at(i).getKod())){
                     VivodUser(i);
+                    chek += 1;
                 }
             }
 
-            Manu();
+            if(chek == 0){
+                cout << "------Такого пользователя нет------" << endl;
+                cout << "----Проверьте введенные данные-----" << endl;
+            }
+
             break;
         case 1:
 
@@ -101,10 +108,16 @@ void Poisk(vector<User>& d, int a){
             for(int i = 0; i < d.size(); i++){
                 if(otv == d.at(i).getFio().getLastName()){
                     VivodUser(i);
+                    chek += 1;
                 }
             }
 
-            Manu();
+            if(chek == 0){
+                cout << "------Такого пользователя нет------" << endl;
+                cout << "----Проверьте введенные данные-----" << endl;
+            }
+
+
             break;
         case 2:
 
@@ -114,10 +127,16 @@ void Poisk(vector<User>& d, int a){
             for(int i = 0; i < d.size(); i++){
                 if(otv == d.at(i).getNumber()){
                     VivodUser(i);
+                    chek += 1;
                 }
             }
 
-            Manu();
+            if(chek == 0){
+                cout << "------Такого пользователя нет------" << endl;
+                cout << "----Проверьте введенные данные-----" << endl;
+            }
+
+
             break;
         case 3:
 
@@ -127,18 +146,20 @@ void Poisk(vector<User>& d, int a){
             for(int i = 0; i < d.size(); i++){
                 if(otv == d.at(i).getKard()){
                     VivodUser(i);
+                    chek += 1;
                 }
             }
 
-            Manu();
-            break;
-        case 4:
+            if(chek == 0){
+                cout << "------Такого пользователя нет------" << endl;
+                cout << "----Проверьте введенные данные-----" << endl;
+            }
 
 
-            Manu();
             break;
+
         default:
-            Manu();
+            break;
 
     }
 }
@@ -327,7 +348,7 @@ void Dobav(){
 int main() {
     Manu();
 
-    while(_otvet1 != 5) {
+    while(true) {
         switch (_otvet1) {
             case 0:
 
@@ -366,6 +387,6 @@ int main() {
         }
     }
 
-    
+
     return 0;
 }

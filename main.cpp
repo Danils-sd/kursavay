@@ -6,10 +6,11 @@
 
 
 
+
 int _otvet1;
 int _otvet2;
 int _otvet3;
-
+string ot;
 vector<User> date;
 int unikKod = 0;
 //Функции вывода меню
@@ -21,7 +22,15 @@ void Manu(){
     << "(3) Добавить данные" << endl
     << "(4) Удалить данные" << endl
     << "Ответ: ";
-    cin >> _otvet1;
+
+    try {
+        cin >> ot;
+        _otvet1 = stoi(ot);
+
+    }
+    catch (...){
+        _otvet1 = 11;
+    }
 
 }
 
@@ -33,7 +42,15 @@ void ManuPoisk(){
          << "(3) По номеру карты" << endl
          << "(4) Вернуться в меню" << endl
          << "Ответ: ";
-    cin >> _otvet2;
+
+    try {
+        cin >> ot;
+        _otvet2 = stoi(ot);
+
+    }
+    catch (...){
+        _otvet2 = 11;
+    }
 }
 
 
@@ -45,7 +62,14 @@ void ManuDell(){
          << "(3) По номеру карты" << endl
          << "(4) Вернуться в меню" << endl
          << "Ответ: ";
-    cin >> _otvet3;
+    try {
+            cin >> ot;
+            _otvet3 = stoi(ot);
+
+    }
+    catch (...){
+        _otvet3 = 11;
+    }
 }
 
 void VivodUser(int i){
